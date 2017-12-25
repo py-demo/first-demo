@@ -1,0 +1,7 @@
+venv/
+.idea/
+.idea
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/python2.7.iml
+/.idea/vcs.xml
