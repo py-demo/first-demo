@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<ul>
-    {% for item in list %}
-        <li>{{ item.name }}</li>
-    {% endfor %}
-</ul>
+{% block title %}主页{% endblock %}
+{% block css %} {{ super() }} {% endblock %}
 
-</body>
-</html>
+{% block nav %} {{ super() }} {% endblock %}
+{% block body %}
+    list
+{% endblock %}
+
+{% block js %} {{ super() }} {% endblock %}

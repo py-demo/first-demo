@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block css %}
+        <link rel="stylesheet" href="/static/css/bootstrap-reboot.css">
+        <link rel="stylesheet" href="/static/css/bootstrap-grid.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    {% endblock %}
+</head>
+<body>
+
+<div class="container">
+    {% block nav %}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/list">List</a></li>
+            </ol>
+        </nav>
+    {% endblock %}
+    <div class="jumbotron">
+        <h1 class="display-5">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured content or information.</p>
+        <hr class="my-3">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    </div>
+
+    {% block body %} {% endblock %}
+</div>
+
+{% block js %}
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+{% endblock %}
+</body>
+</html>
