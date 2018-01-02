@@ -1,11 +1,11 @@
 # coding:utf-8
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['get', 'post'])
-def hello_world():
+def index():
     return render_template('home.html', **{
         'title': '首页'
     })
@@ -18,11 +18,19 @@ def list():
     })
 
 
-@app.route('/login')
+@app.route('/login', methods=['get', 'post'])
 def login():
-    return render_template('login.html', **{
-        'title': '用户登陆'
-    })
+    if request.method == 'GET':
+        return render_template('login.html', **{
+            'title': '用户登陆'
+        })
+    else:
+        username = request.form.get('username')
+        password = request.form.get('password')
+        return jsonify({
+            'username': username,
+            'password': password
+        })
 
 
 if __name__ == '__main__':
