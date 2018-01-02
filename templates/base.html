@@ -7,27 +7,46 @@
         <link rel="stylesheet" href="/static/css/bootstrap-reboot.css">
         <link rel="stylesheet" href="/static/css/bootstrap-grid.css">
         <link rel="stylesheet" href="/static/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/css/app.css">
     {% endblock %}
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
     {% block nav %}
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="/list">List</a></li>
-            </ol>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand">
+                    <img src="/static/img/logo.jpg" width="120">
+                </a>
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="/">首页</a>
+                        <a class="nav-item nav-link" href="/list">发布问答</a>
+                    </div>
+                    <form class="form-inline">
+                        <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-sm btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+                {#
+                <div class="form-inline">
+                    <a href="javascript:;">Saturn</a>
+                    <a href="javascript:;" class="px-2"> | </a>
+                    <a href="javascript:;">注销</a>
+                </div>
+                #}
+                <div class="form-inline">
+                    <a href="/login">登陆</a>
+                    <a href="javascript:;" class="px-2"> | </a>
+                    <a href="javascript:;">注册</a>
+                </div>
+            </div>
         </nav>
     {% endblock %}
-    <div class="jumbotron">
-        <h1 class="display-5">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
-        <hr class="my-3">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    </div>
+</div>
 
+<div class="container">
     {% block body %} {% endblock %}
 </div>
 

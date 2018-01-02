@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}主页{% endblock %}
+{% block css %} {{ super() }} {% endblock %}
+
+{% block nav %} {{ super() }} {% endblock %}
+{% block body %}
+    <div class="container col-8 form-wrap">
+        <div class="text-center py-3">
+            <h3>用户登陆</h3>
+        </div>
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="email" class="form-control" id="emal" placeholder="账号">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="pws" placeholder="密码">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary form-control">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %} {{ super() }} {% endblock %}
